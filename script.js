@@ -142,7 +142,7 @@ function lockExploration() {
       let percent = (starCount / TOTAL_SYSTEMS) * 100;
       if (percent > 100) percent = 100;
       progressBarFill.style.width = percent + "%";
-      progressBarText.textContent = percent.toFixed(8) + "%";
+      progressBarText.textContent = percent.toFixed(12) + "%";
 
       // Reset buttons and progress bars for next system
       completedActions.clear();
