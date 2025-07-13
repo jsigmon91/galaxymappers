@@ -5,7 +5,7 @@ window.addEventListener("DOMContentLoaded", () => {
   // ==== STAR COUNT & PROGRESS BAR VARIABLES ====
   // Tracks how many star systems have been mapped
   let starCount = 0;
-
+  let hasFasterScannerUpgrade = false;
   let researchCount = 0;
 const researchDisplay = document.getElementById("researchCount");
   
