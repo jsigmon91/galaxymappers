@@ -87,7 +87,7 @@ function lockExploration() {
   // ==== ACTIONS SETUP ====
   // Define each action button, its progress bar, and how long it takes (ms)
   const actions = [
-    { id: "scanStarBtn", progressId: "scanStarProgress", duration: 5000 },
+    { id: "scanStarBtn", progressId: "scanStarProgress", getDuration: () => hasFasterScannerUpgrade ? 4000 : 5000 },
     { id: "deepScanBtn", progressId: "deepScanProgress", duration: 15000 },
     { id: "sendProbesBtn", progressId: "sendProbesProgress", duration: 20000 },
     { id: "soilSamplesBtn", progressId: "soilSamplesProgress", duration: 10000 },
@@ -107,7 +107,7 @@ function lockExploration() {
     btn.addEventListener("click", () => {
       // Prevent multiple actions running simultaneously
       if (currentAction) return;
-
+      const duration = action.getDuration ? action.getDuration() : action.duration;
       currentAction = id;
       btn.disabled = true;           // Disable button while running
       progressFill.style.width = "0%";
