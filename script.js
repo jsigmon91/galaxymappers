@@ -2,7 +2,7 @@ window.addEventListener("DOMContentLoaded", () => {
   // Star count
   let starCount = 0;
   const starDisplay = document.getElementById("starCount");
-  const scanButton = document.getElementById("scanButton");
+  // const scanButton = document.getElementById("scanButton"); // Commented out since scanButton does not exist now
 
   const systemsMappedDisplay = document.getElementById("systemsMapped");
   const progressBarFill = document.getElementById("progressBarFill");
@@ -10,6 +10,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
   const TOTAL_SYSTEMS = 400000000000; // 400 billion target
 
+  /*
+  // Temporarily disabled until Scan Star button is added back
   scanButton.addEventListener("click", () => {
     starCount++;
     starDisplay.textContent = starCount;
@@ -25,6 +27,7 @@ window.addEventListener("DOMContentLoaded", () => {
     // Update text inside the new separate element (not inside the fill div)
     progressBarText.textContent = percent.toFixed(6) + "%"; // six decimals for fun
   });
+  */
 
   const travelButton = document.getElementById("travelButton");
   const travelProgressFill = document.getElementById("travelProgressFill");
