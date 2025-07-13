@@ -19,7 +19,29 @@ button {
   justify-content: center; /* center by default */
   position: relative;
 }
+/* Version number fixed at top-left */
+#versionNumber {
+  position: fixed;
+  top: 5px;
+  left: 10px;
+  font-size: 12px;
+  color: #999;
+  font-family: 'Rajdhani', sans-serif;
+  z-index: 9999;
+  user-select: none;
+}
 
+/* Subtitle aligned right, just above title */
+#gameSubtitle {
+  position: absolute;
+  top: -25px;
+  right: 20px;
+  font-size: 14px;
+  font-weight: normal;
+  color: #999;
+  font-family: 'Rajdhani', sans-serif;
+  user-select: none;
+}
 /* Center the title absolutely so we can have right-aligned tracker */
 #gameTitle {
   position: absolute;
