@@ -35,8 +35,8 @@ button {
 /* Subtitle aligned right, just above title */
 #gameSubtitle {
   position: absolute;
-  top: 20px;
-  left: 25px;
+  top: 27px;
+  left: 27px;
   font-size: 14px;
   font-weight: normal;
   color: #999;
