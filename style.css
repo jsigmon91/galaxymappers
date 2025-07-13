@@ -228,7 +228,7 @@ position: relative;
   top: 0;
   left: 0;
   height: 100%;
-  width: 0%;
+  width: var(--progress, 0%);
   background-color: rgba(0, 0, 0, 0.3); /* dark overlay for progress effect */
   border-radius: 5px;
   z-index: 0;
