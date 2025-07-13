@@ -6,6 +6,9 @@ window.addEventListener("DOMContentLoaded", () => {
   // Tracks how many star systems have been mapped
   let starCount = 0;
 
+  let researchCount = 0;
+const researchDisplay = document.getElementById("researchCount");
+  
   // Elements showing star count, systems mapped, and progress bar UI
   const starDisplay = document.getElementById("starCount");
   const systemsMappedDisplay = document.getElementById("systemsMapped");
@@ -126,7 +129,9 @@ function lockExploration() {
           completedActions.add(id);   // Mark this action done
           currentAction = null;
           btn.disabled = true;        // Keep disabled after completion
-
+          researchCount++;
+          researchDisplay.textContent = `Research: ${researchCount}`;
+          
           checkAllActionsCompleted(); // Check if all actions are done
         }
       }, interval);
