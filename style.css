@@ -166,6 +166,7 @@ button {
 }
 
 #travelButton {
+  font-family: 'Rajdhani', sans-serif !important;
   font-size: 20px;
   padding: 15px 30px;
   background-color: #176ba3;
