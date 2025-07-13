@@ -1,4 +1,7 @@
 window.addEventListener("DOMContentLoaded", () => {
+
+  let speedMultiplier = 1; // Default is 1x, change to 2 or 10 to speed up
+
   // ==== STAR COUNT & PROGRESS BAR VARIABLES ====
   // Tracks how many star systems have been mapped
   let starCount = 0;
@@ -142,7 +145,7 @@ function lockExploration() {
       let percent = (starCount / TOTAL_SYSTEMS) * 100;
       if (percent > 100) percent = 100;
       progressBarFill.style.width = percent + "%";
-      progressBarText.textContent = percent.toFixed(12) + "%";
+      progressBarText.textContent = percent.toFixed(10) + "%";
 
       // Reset buttons and progress bars for next system
       completedActions.clear();
