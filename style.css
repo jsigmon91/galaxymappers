@@ -1,8 +1,8 @@
 body {
   font-family: sans-serif;
   padding: 20px;
-  background: #000;
-  color: #0f0;
+  background: #333333;
+  color: #37b8db;
 }
 
 button {
@@ -10,7 +10,7 @@ button {
   font-size: 16px;
 }
 #topBar {
-  border-bottom: 2px solid #0f0;
+  border-bottom: 2px solid #37b8db;
   padding-bottom: 10px;
   margin-bottom: 20px;
   text-align: center;
@@ -30,20 +30,20 @@ button {
   padding: 10px;
   display: flex;
   flex-direction: column;
-  border-right: 2px solid #0f0;
+  border-right: 2px solid #37b8db;
 }
 
 .tab {
   padding: 10px;
   margin-bottom: 5px;
   background-color: #222;
-  color: #0f0;
+  color: #37b8db;
   cursor: default;
 }
 
 .tab.active {
-  background-color: #0f0;
-  color: #000;
+  background-color: #37b8db;
+  color: #333333;
   font-weight: bold;
   cursor: pointer;
 }
