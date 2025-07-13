@@ -20,3 +20,35 @@ button {
   margin: 0;
   font-size: 32px;
 }
+#gameWrapper {
+  display: flex;
+}
+
+#sidebar {
+  width: 200px;
+  background-color: #111;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  border-right: 2px solid #0f0;
+}
+
+.tab {
+  padding: 10px;
+  margin-bottom: 5px;
+  background-color: #222;
+  color: #0f0;
+  cursor: default;
+}
+
+.tab.active {
+  background-color: #0f0;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#mainContent {
+  flex-grow: 1;
+  padding: 20px;
+}
