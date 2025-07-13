@@ -1,6 +1,6 @@
 body {
   font-family: 'Rajdhani', sans-serif;
-  padding: 0px;
+  padding: 20px;
   background: #222;
   color: #37b8db;
 }
@@ -23,7 +23,7 @@ button {
 /* Center the title absolutely so we can have right-aligned tracker */
 #gameTitle {
   position: absolute;
-  left: 20px;
+  left: 0px;
   transform: none;
   margin: 0;
   font-size: 36px;
