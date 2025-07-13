@@ -210,6 +210,7 @@ button {
 
 .actionButton {
 position: relative;
+  font-family: 'Rajdhani', sans-serif !important;
   background-color: #37b8db;
   color: white;
   font-weight: bold;
