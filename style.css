@@ -53,6 +53,17 @@ button {
   white-space: nowrap;
 }
 
+#researchTracker {
+  position: absolute;
+  top: 100%; /* just below the title */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  color: #37b8db;
+  white-space: nowrap;
+  user-select: none;
+}
+
 /* Tracker container aligned right */
 #tracker {
   position: absolute;
