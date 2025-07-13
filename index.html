@@ -8,16 +8,28 @@
 <body>
   <div id="topBar">
     <h1 id="gameTitle">Galaxy Mappers</h1>
-    <!-- We'll add resource tracking here later -->
   </div>
 
-  <div id="mainContent">
-    <div id="resources">
-      <p>Scanned Stars: <span id="starCount">0</span></p>
+  <div id="gameWrapper">
+    <div id="sidebar">
+      <div class="tab" id="earthTab">Earth</div>
+      <div class="tab active" id="explorationTab">Exploration</div>
+      <div class="tab" id="fleetsTab">Fleets</div>
+      <div class="tab" id="artifactsTab">Artifacts</div>
+      <div class="tab" id="blackholeTab">Blackhole</div>
     </div>
-    <button id="scanButton">Scan Star</button>
+
+    <div id="mainContent">
+      <div id="explorationView">
+        <div id="resources">
+          <p>Scanned Stars: <span id="starCount">0</span></p>
+        </div>
+        <button id="scanButton">Scan Star</button>
+      </div>
+    </div>
   </div>
 
   <script src="script.js"></script>
 </body>
+
 </html>
