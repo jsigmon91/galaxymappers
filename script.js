@@ -59,7 +59,12 @@ window.addEventListener("DOMContentLoaded", () => {
       const timer = setInterval(() => {
         elapsed += interval;
         const percent = Math.min((elapsed / duration) * 100, 100);
-        progressFill.style.width = percent + "%";
+        btn.style.setProperty('--progress', percent + '%');
+        btn.style.background = '#37b8db'; // optional reset background color if needed
+        btn.style.position = 'relative'; // ensure positioning
+
+        // Use JS to set the width of the ::before pseudo-element:
+        btn.style.setProperty('--progress', percent + '%');
 
         // When action completes
         if (elapsed >= duration) {
