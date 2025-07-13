@@ -25,6 +25,34 @@ scanButton.addEventListener("click", () => {
   progressBarText.textContent = percent.toFixed(6) + "%"; // six decimals for fun
 });
 
+const travelButton = document.getElementById("travelButton");
+const travelProgressFill = document.getElementById("travelProgressFill");
+const actionsSection = document.getElementById("actionsSection");
+
+function travelToNextSystem() {
+  travelButton.disabled = true;
+  travelProgressFill.style.width = "0%";
+  actionsSection.style.display = "none";
+
+  const duration = 15000; // 15 seconds
+  const interval = 100; // update every 100ms
+  let elapsed = 0;
+
+  const timer = setInterval(() => {
+    elapsed += interval;
+    const percent = Math.min((elapsed / duration) * 100, 100);
+    travelProgressFill.style.width = percent + "%";
+
+    if (elapsed >= duration) {
+      clearInterval(timer);
+      actionsSection.style.display = "block";
+    }
+  }, interval);
+}
+
+travelButton.addEventListener("click", travelToNextSystem);
+
+
 // ----- Tab Switching Logic -----
 
 const tabs = document.querySelectorAll(".tab.button");
