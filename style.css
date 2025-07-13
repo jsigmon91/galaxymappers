@@ -23,8 +23,8 @@ button {
 /* Center the title absolutely so we can have right-aligned tracker */
 #gameTitle {
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 20px;
+  transform: none;
   margin: 0;
   font-size: 36px;
   white-space: nowrap;
