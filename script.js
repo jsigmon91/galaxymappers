@@ -5,6 +5,7 @@ const scanButton = document.getElementById("scanButton");
 
 const systemsMappedDisplay = document.getElementById("systemsMapped");
 const progressBarFill = document.getElementById("progressBarFill");
+const progressBarText = document.getElementById("progressBarText"); // NEW line
 
 const TOTAL_SYSTEMS = 400000000000; // 400 billion target
 
@@ -19,7 +20,9 @@ scanButton.addEventListener("click", () => {
   if (percent > 100) percent = 100;
 
   progressBarFill.style.width = percent + "%";
-  progressBarFill.textContent = percent.toFixed(6) + "%"; // six decimals for fun
+
+  // Update text inside the new separate element (not inside the fill div)
+  progressBarText.textContent = percent.toFixed(6) + "%"; // six decimals for fun
 });
 
 // ----- Tab Switching Logic -----
