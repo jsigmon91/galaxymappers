@@ -129,52 +129,52 @@ button {
 /* Idle colors (not selected) */
 .tab.button.earth {
   background-color: #303d30;
-  color: #1c8f1c;
+  color: #F9F6EE;
 }
 
 .tab.button.exploration {
   background-color: #2b4252;
-  color: #176ba3;
+  color: #F9F6EE;
 }
 
 .tab.button.fleets {
   background-color: #4a2b2b;
-  color: #801a1a;
+  color: #F9F6EE;
 }
 
 .tab.button.artifacts {
   background-color: #3d3d36;
-  color: #99994c;
+  color: #F9F6EE;
 }
 
 .tab.button.blackhole {
   background-color: #422b4a;
-  color: #661a80;
+  color: #F9F6EE;
 }
 
 /* active colors (selected) */
 .tab.button.earth.active {
-  color: #303d30;
+  color: #EDEADE;
   background-color: #1c8f1c;
 }
 
 .tab.button.exploration.active {
-  color: #2b4252;
+  color: #EDEADE;
   background-color: #176ba3;
 }
 
 .tab.button.fleets.active {
-  color: #4a2b2b;
+  color: #EDEADE;
   background-color: #801a1a;
 }
 
 .tab.button.artifacts.active {
-  color: #3d3d36;
+  color: #EDEADE;
   background-color: #99994c;
 }
 
 .tab.button.blackhole.active {
-  color: #422b4a;
+  color: #EDEADE;
   background-color: #661a80;
 }
 
