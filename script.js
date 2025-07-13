@@ -2,12 +2,9 @@ window.addEventListener("DOMContentLoaded", () => {
   // Star count
   let starCount = 0;
   const starDisplay = document.getElementById("starCount");
-  // const scanButton = document.getElementById("scanButton"); // Commented out since scanButton does not exist now
-
   const systemsMappedDisplay = document.getElementById("systemsMapped");
   const progressBarFill = document.getElementById("progressBarFill");
   const progressBarText = document.getElementById("progressBarText"); // NEW line
-
   const TOTAL_SYSTEMS = 400000000000; // 400 billion target
 
   /*
@@ -33,6 +30,79 @@ window.addEventListener("DOMContentLoaded", () => {
   const travelProgressFill = document.getElementById("travelProgressFill");
   const actionsSection = document.getElementById("actionsSection");
 
+  // ======= ACTIONS SETUP - Move this outside travelToNextSystem =======
+  const actions = [
+    { id: "scanStarBtn", progressId: "scanStarProgress", duration: 5000 },
+    { id: "deepScanBtn", progressId: "deepScanProgress", duration: 15000 },
+    { id: "sendProbesBtn", progressId: "sendProbesProgress", duration: 20000 },
+    { id: "soilSamplesBtn", progressId: "soilSamplesProgress", duration: 10000 },
+    { id: "atmosphericReadingsBtn", progressId: "atmosphericReadingsProgress", duration: 12000 },
+    { id: "logFindingsBtn", progressId: "logFindingsProgress", duration: 8000 },
+  ];
+
+  let currentAction = null;
+  let completedActions = new Set();
+
+  actions.forEach(({ id, progressId, duration }) => {
+    const btn = document.getElementById(id);
+    const progressFill = document.getElementById(progressId);
+
+    btn.addEventListener("click", () => {
+      if (currentAction) return; // block if an action is running
+
+      currentAction = id;
+      btn.disabled = true;
+      progressFill.style.width = "0%";
+
+      let elapsed = 0;
+      const interval = 100;
+
+      const timer = setInterval(() => {
+        elapsed += interval;
+        const percent = Math.min((elapsed / duration) * 100, 100);
+        progressFill.style.width = percent + "%";
+
+        if (elapsed >= duration) {
+          clearInterval(timer);
+          completedActions.add(id);
+          currentAction = null;
+          btn.disabled = true; // keep disabled since done
+
+          checkAllActionsCompleted();
+        }
+      }, interval);
+    });
+  });
+
+  function checkAllActionsCompleted() {
+    if (completedActions.size === actions.length) {
+      // Increment systems mapped count
+      starCount++;
+      systemsMappedDisplay.textContent = `Systems Mapped: ${starCount.toLocaleString()}`;
+
+      let percent = (starCount / TOTAL_SYSTEMS) * 100;
+      if (percent > 100) percent = 100;
+
+      progressBarFill.style.width = percent + "%";
+      progressBarText.textContent = percent.toFixed(6) + "%";
+
+      // Reset buttons and progress bars
+      completedActions.clear();
+      actions.forEach(({ id, progressId }) => {
+        const btn = document.getElementById(id);
+        const progressFill = document.getElementById(progressId);
+        btn.disabled = false;
+        progressFill.style.width = "0%";
+      });
+
+      // Hide actions, enable travel for next system
+      actionsSection.style.display = "none";
+      travelButton.disabled = false;
+      travelProgressFill.style.width = "0%";
+    }
+  }
+
+  // ======= TRAVEL BUTTON LOGIC ======= 
   function travelToNextSystem() {
     travelButton.disabled = true;
     travelProgressFill.style.width = "0%";
