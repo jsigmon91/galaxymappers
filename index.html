@@ -28,13 +28,20 @@
     </div>
 
    <div id="mainContent">
-  <!-- Exploration -->
-  <div class="view" id="explorationView">
-    <div id="resources">
-      <p>Scanned Stars: <span id="starCount">0</span></p>
+<!-- Exploration -->
+<div class="view" id="explorationView">
+  <div class="travelSection">
+    <button id="travelButton">Travel to Next System</button>
+    <div id="travelProgressContainer">
+      <div id="travelProgressFill"></div>
     </div>
-    <button id="scanButton">Scan Star</button>
   </div>
+
+  <div id="actionsSection" style="display: none;">
+    <p>You're now in a new star system. Scanning tools unlocked.</p>
+    <!-- Placeholder for action buttons, added in Step 2 -->
+  </div>
+</div>
 
   <!-- Earth -->
   <div class="view" id="earthView" style="display: none;">
