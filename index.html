@@ -1,73 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Galaxy Mappers</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div id="topBar">
-  <h1 id="gameTitle">Galaxy Mappers</h1>
-  
-  <div id="tracker">
-    <div id="systemsMapped">Systems Mapped: 0</div>
-    <div id="progressBarContainer">
-      <div id="progressBarFill"></div>
-      <div id="progressBarText">0%</div>
+    <h1 id="gameTitle">Galaxy Mappers</h1>
+    <div id="tracker">
+      <div id="systemsMapped">Systems Mapped: 0</div>
+      <div id="progressBarContainer">
+        <div id="progressBarFill"></div>
+        <div id="progressBarText">0%</div>
+      </div>
     </div>
   </div>
-</div>
 
   <div id="gameWrapper">
     <div id="sidebar">
-       <div class="tab button earth" id="earthTab">Earth</div>
-       <div class="tab button exploration active" id="explorationTab">Exploration</div>
-       <div class="tab button fleets" id="fleetsTab">Fleets</div>
-       <div class="tab button artifacts" id="artifactsTab">Artifacts</div>
-       <div class="tab button blackhole" id="blackholeTab">Blackhole</div>
+      <div class="tab button earth" id="earthTab">Earth</div>
+      <div class="tab button exploration active" id="explorationTab">Exploration</div>
+      <div class="tab button fleets" id="fleetsTab">Fleets</div>
+      <div class="tab button artifacts" id="artifactsTab">Artifacts</div>
+      <div class="tab button blackhole" id="blackholeTab">Blackhole</div>
     </div>
 
-   <div id="mainContent">
-<!-- Exploration -->
-<div class="view" id="explorationView">
-  <div class="travelSection">
-    <button id="travelButton">Travel to Next System</button>
-    <div id="travelProgressContainer">
-      <div id="travelProgressFill"></div>
-    </div>
-  </div>
+    <div id="mainContent">
+      <!-- Exploration -->
+      <div class="view" id="explorationView">
+        <div class="travelSection" style="text-align: center; margin-top: 40px;">
+          <button id="travelButton" style="font-size: 20px; padding: 15px 30px;">
+            Travel to Next System
+          </button>
+          <div
+            id="travelProgressContainer"
+            style="width: 100%; max-width: 400px; height: 20px; border: 1px solid #37b8db; margin: 15px auto; border-radius: 4px; background-color: #222;"
+          >
+            <div
+              id="travelProgressFill"
+              style="height: 100%; width: 0%; background-color: #37b8db; border-radius: 4px 0 0 4px;"
+            ></div>
+          </div>
+        </div>
 
-  <div id="actionsSection" style="display: none;">
-    <p>You're now in a new star system. Scanning tools unlocked.</p>
-    <!-- Placeholder for action buttons, added in Step 2 -->
-  </div>
-</div>
+        <div id="actionsSection" style="display: none; margin-top: 30px; text-align: center;">
+          <p>You're now in a new star system. Scanning tools unlocked.</p>
+          <!-- Action buttons to come -->
+        </div>
+      </div>
 
-  <!-- Earth -->
-  <div class="view" id="earthView" style="display: none;">
-    <p>Welcome to Earth. This will eventually be your base of operations, prestige, and upgrades.</p>
-  </div>
+      <!-- Earth -->
+      <div class="view" id="earthView" style="display: none;">
+        <p>Welcome to Earth. This will eventually be your base of operations, prestige, and upgrades.</p>
+      </div>
 
-  <!-- Fleets -->
-  <div class="view" id="fleetsView" style="display: none;">
-    <p>Fleet management will live here in the future.</p>
-  </div>
+      <!-- Fleets -->
+      <div class="view" id="fleetsView" style="display: none;">
+        <p>Fleet management will live here in the future.</p>
+      </div>
 
-     <!-- Artifacts -->
-  <div class="view" id="artifactsView" style="display: none;">
-    <p>Artifacts will live here in the future.</p>
-  </div>
+      <!-- Artifacts -->
+      <div class="view" id="artifactsView" style="display: none;">
+        <p>Artifacts will live here in the future.</p>
+      </div>
 
-  <!-- Black Holes -->
-  <div class="view" id="blackholesView" style="display: none;">
-    <p>This tab will eventually unlock a second prestige layer involving black holes.</p>
-  </div>
-</div>
-
+      <!-- Black Holes -->
+      <div class="view" id="blackholesView" style="display: none;">
+        <p>This tab will eventually unlock a second prestige layer involving black holes.</p>
+      </div>
     </div>
   </div>
 
   <script src="script.js"></script>
 </body>
-
 </html>
