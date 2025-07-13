@@ -3,9 +3,23 @@ let starCount = 0;
 const starDisplay = document.getElementById("starCount");
 const scanButton = document.getElementById("scanButton");
 
+const systemsMappedDisplay = document.getElementById("systemsMapped");
+const progressBarFill = document.getElementById("progressBarFill");
+
+const TOTAL_SYSTEMS = 400000000000; // 400 billion target
+
 scanButton.addEventListener("click", () => {
   starCount++;
   starDisplay.textContent = starCount;
+
+  // Update tracker
+  systemsMappedDisplay.textContent = `Systems Mapped: ${starCount.toLocaleString()}`;
+
+  let percent = (starCount / TOTAL_SYSTEMS) * 100;
+  if (percent > 100) percent = 100;
+
+  progressBarFill.style.width = percent + "%";
+  progressBarFill.textContent = percent.toFixed(6) + "%"; // six decimals for fun
 });
 
 // ----- Tab Switching Logic -----
