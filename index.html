@@ -36,103 +36,102 @@
     </div>
 
     <div id="mainContent">
-      <!-- Exploration -->
-      <div class="view" id="explorationView">
-        <div class="travelSection" style="text-align: center; margin-top: 40px;">
-          <button id="travelButton" style="font-size: 20px; padding: 15px 30px;">
-            Travel to Next System
-          </button>
-          <div
-            id="travelProgressContainer"
-            style="width: 100%; max-width: 400px; height: 20px; border: 1px solid #37b8db; margin: 15px auto; border-radius: 4px; background-color: #222;"
-          >
-            <div
-              id="travelProgressFill"
-              style="height: 100%; width: 0%; background-color: #37b8db; border-radius: 4px 0 0 4px;"
-            ></div>
-          </div>
+  <!-- Exploration -->
+  <div class="view" id="explorationView">
+    <div class="travelSection" style="text-align: center; margin-top: 40px;">
+      <button id="travelButton" style="font-size: 20px; padding: 15px 30px;">
+        Travel to Next System
+      </button>
+      <div
+        id="travelProgressContainer"
+        style="width: 100%; max-width: 400px; height: 20px; border: 1px solid #37b8db; margin: 15px auto; border-radius: 4px; background-color: #222;"
+      >
+        <div
+          id="travelProgressFill"
+          style="height: 100%; width: 0%; background-color: #37b8db; border-radius: 4px 0 0 4px;"
+        ></div>
+      </div>
+    </div>
+
+    <div id="lifeSupportContainer" style="margin-bottom: 20px; width: 300px; margin-left: auto; margin-right: auto; color: #37b8db;">
+      <label for="lifeSupportBar" style="display:block; margin-bottom: 6px; font-weight: bold; font-size: 16px;">Life Support</label>
+      <div id="lifeSupportBarContainer" style="width: 100%; height: 20px; background-color: #444; border-radius: 10px; overflow: hidden; border: 1px solid #37b8db;">
+        <div id="lifeSupportBarFill" style="height: 100%; width: 100%; background-color: #37b8db; transition: width 1s linear;"></div>
+      </div>
+      <div id="lifeSupportTime" style="text-align: center; margin-top: 6px; font-family: monospace;">05:00</div>
+    </div>
+
+    <div id="actionsSection" style="display: none; margin-top: 30px; text-align: center;">
+      <p>You're now in a new star system. Scanning tools unlocked.</p>
+
+      <div class="actionButtonWrapper">
+        <button class="actionButton" id="scanStarBtn">Scan Star</button>
+        <div class="actionProgressContainer">
+          <div class="actionProgressFill" id="scanStarProgress"></div>
         </div>
+      </div>
 
-        <div id="lifeSupportContainer" style="margin-bottom: 20px; width: 300px; margin-left: auto; margin-right: auto; color: #37b8db;">
-          <label for="lifeSupportBar" style="display:block; margin-bottom: 6px; font-weight: bold; font-size: 16px;">Life Support</label>
-          <div id="lifeSupportBarContainer" style="width: 100%; height: 20px; background-color: #444; border-radius: 10px; overflow: hidden; border: 1px solid #37b8db;">
-            <div id="lifeSupportBarFill" style="height: 100%; width: 100%; background-color: #37b8db; transition: width 1s linear;"></div>
-          </div>
-          <div id="lifeSupportTime" style="text-align: center; margin-top: 6px; font-family: monospace;">05:00</div>
+      <div class="actionButtonWrapper">
+        <button class="actionButton" id="deepScanBtn">Deep Scan Planets and Moons</button>
+        <div class="actionProgressContainer">
+          <div class="actionProgressFill" id="deepScanProgress"></div>
         </div>
+      </div>
 
-        <div id="actionsSection" style="display: none; margin-top: 30px; text-align: center;">
-  <p>You're now in a new star system. Scanning tools unlocked.</p>
+      <div class="actionButtonWrapper">
+        <button class="actionButton" id="sendProbesBtn">Send Probes to Rocky Planets</button>
+        <div class="actionProgressContainer">
+          <div class="actionProgressFill" id="sendProbesProgress"></div>
+        </div>
+      </div>
 
-  <div class="actionButtonWrapper">
-    <button class="actionButton" id="scanStarBtn">Scan Star</button>
-    <div class="actionProgressContainer">
-      <div class="actionProgressFill" id="scanStarProgress"></div>
+      <div class="actionButtonWrapper">
+        <button class="actionButton" id="soilSamplesBtn">Take Soil and Rock Samples</button>
+        <div class="actionProgressContainer">
+          <div class="actionProgressFill" id="soilSamplesProgress"></div>
+        </div>
+      </div>
+
+      <div class="actionButtonWrapper">
+        <button class="actionButton" id="atmosphericReadingsBtn">Record Atmospheric Readings</button>
+        <div class="actionProgressContainer">
+          <div class="actionProgressFill" id="atmosphericReadingsProgress"></div>
+        </div>
+      </div>
+
+      <div class="actionButtonWrapper">
+        <button class="actionButton" id="logFindingsBtn">Log Findings</button>
+        <div class="actionProgressContainer">
+          <div class="actionProgressFill" id="logFindingsProgress"></div>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="actionButtonWrapper">
-    <button class="actionButton" id="deepScanBtn">Deep Scan Planets and Moons</button>
-    <div class="actionProgressContainer">
-      <div class="actionProgressFill" id="deepScanProgress"></div>
+  <!-- Earth -->
+  <div class="view" id="earthView" style="display: none;">
+    <div id="earthUpgrades">
+      <h3>Upgrades</h3>
+      <button id="upgradeFasterScan" class="upgradeButton">Upgrade: Faster Scanners (6 Research)</button>
     </div>
   </div>
 
-  <div class="actionButtonWrapper">
-    <button class="actionButton" id="sendProbesBtn">Send Probes to Rocky Planets</button>
-    <div class="actionProgressContainer">
-      <div class="actionProgressFill" id="sendProbesProgress"></div>
-    </div>
+  <!-- Fleets -->
+  <div class="view" id="fleetsView" style="display: none;">
+    <p>Fleet management will live here in the future.</p>
   </div>
 
-  <div class="actionButtonWrapper">
-    <button class="actionButton" id="soilSamplesBtn">Take Soil and Rock Samples</button>
-    <div class="actionProgressContainer">
-      <div class="actionProgressFill" id="soilSamplesProgress"></div>
-    </div>
+  <!-- Artifacts -->
+  <div class="view" id="artifactsView" style="display: none;">
+    <p>Artifacts will live here in the future.</p>
   </div>
 
-  <div class="actionButtonWrapper">
-    <button class="actionButton" id="atmosphericReadingsBtn">Record Atmospheric Readings</button>
-    <div class="actionProgressContainer">
-      <div class="actionProgressFill" id="atmosphericReadingsProgress"></div>
-    </div>
-  </div>
-
-  <div class="actionButtonWrapper">
-    <button class="actionButton" id="logFindingsBtn">Log Findings</button>
-    <div class="actionProgressContainer">
-      <div class="actionProgressFill" id="logFindingsProgress"></div>
-    </div>
+  <!-- Black Holes -->
+  <div class="view" id="blackholesView" style="display: none;">
+    <p>This tab will eventually unlock a second prestige layer involving black holes.</p>
   </div>
 </div>
-</div>
 
-
-      <!-- Earth -->
-      <div class="view" id="earthView" style="display: none;">
-        <div id="earthUpgrades">
-          <h3>Upgrades</h3>
-          <button id="upgradeFasterScan" class="upgradeButton">Upgrade: Faster Scanners (6 Research)</button>
-        </div>
-      </div>
-
-      <!-- Fleets -->
-      <div class="view" id="fleetsView" style="display: none;">
-        <p>Fleet management will live here in the future.</p>
-      </div>
-
-      <!-- Artifacts -->
-      <div class="view" id="artifactsView" style="display: none;">
-        <p>Artifacts will live here in the future.</p>
-      </div>
-
-      <!-- Black Holes -->
-      <div class="view" id="blackholesView" style="display: none;">
-        <p>This tab will eventually unlock a second prestige layer involving black holes.</p>
-      </div>
-    </div>
-  </div>
 
   <script src="script.js"></script>
 </body>
