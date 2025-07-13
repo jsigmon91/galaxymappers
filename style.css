@@ -34,7 +34,7 @@ button {
 #tracker {
   position: absolute;
   right: 20px;
-  text-align: right;
+  text-align: center;
   width: 200px;
   font-size: 14px;
   color: #37b8db;
