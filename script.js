@@ -65,14 +65,18 @@ function lockExploration() {
   });
 }
 
-// Start countdown timer
-const lifeSupportInterval = setInterval(() => {
-  lifeSupportRemaining--;
   updateLifeSupportBar();
-}, 1000);
 
-// Initialize bar at start
-updateLifeSupportBar();
+  const timer = setInterval(() => {
+    lifeSupportRemaining--;
+    if (lifeSupportRemaining < 0) {
+      clearInterval(timer);
+      lifeSupportTimeDisplay.textContent = "00:00 - LIFE SUPPORT FAILED";
+      // Disable buttons or trigger lock function here
+      return;
+    }
+    updateLifeSupportBar();
+  }, 1000);
   
   // ==== ACTIONS SETUP ====
   // Define each action button, its progress bar, and how long it takes (ms)
