@@ -12,13 +12,13 @@ button {
 #topBar {
   border-bottom: 2px solid #37b8db;
   padding-bottom: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   text-align: center;
 }
 
 #gameTitle {
   margin: 0;
-  font-size: 32px;
+  font-size: 28px;
 }
 #gameWrapper {
   display: flex;
