@@ -100,43 +100,40 @@ function lockExploration() {
   let completedActions = new Set();
 
   // Attach click listeners to each action button
-  actions.forEach(({ id, progressId, duration }) => {
-    const btn = document.getElementById(id);
-    const progressFill = document.getElementById(progressId);
+ actions.forEach(action => {
+  const { id, progressId } = action;
+  const btn = document.getElementById(id);
+  const progressFill = document.getElementById(progressId);
 
-    btn.addEventListener("click", () => {
-      // Prevent multiple actions running simultaneously
-      if (currentAction) return;
-      const duration = action.getDuration ? action.getDuration() : action.duration;
-      currentAction = id;
-      btn.disabled = true;           // Disable button while running
-      progressFill.style.width = "0%";
+  btn.addEventListener("click", () => {
+    if (currentAction) return;
+    const duration = action.getDuration ? action.getDuration() : action.duration;
 
-      let elapsed = 0;
-      const interval = 100;           // Update progress every 100ms
+    currentAction = id;
+    btn.disabled = true;
+    progressFill.style.width = "0%";
 
-      // Fill the progress bar over the specified duration
-      const timer = setInterval(() => {
-        elapsed += interval;
-        const percent = Math.min((elapsed / duration) * 100, 100);
+    let elapsed = 0;
+    const interval = 100;
 
-        // Use JS to set the width of the ::before pseudo-element:
-        btn.style.setProperty('--progress', percent + '%');
+    const timer = setInterval(() => {
+      elapsed += interval;
+      const percent = Math.min((elapsed / duration) * 100, 100);
+      btn.style.setProperty('--progress', percent + '%');
 
-        // When action completes
-        if (elapsed >= duration) {
-          clearInterval(timer);
-          completedActions.add(id);   // Mark this action done
-          currentAction = null;
-          btn.disabled = true;        // Keep disabled after completion
-          researchCount++;
-          researchDisplay.textContent = `Research: ${researchCount}`;
-          
-          checkAllActionsCompleted(); // Check if all actions are done
-        }
-      }, interval);
-    });
+      if (elapsed >= duration) {
+        clearInterval(timer);
+        completedActions.add(id);
+        currentAction = null;
+        btn.disabled = true;
+        researchCount++;
+        researchDisplay.textContent = `Research: ${researchCount}`;
+        checkAllActionsCompleted();
+      }
+    }, interval);
   });
+});
+
 
   // ==== CHECK IF ALL ACTIONS COMPLETED ====
   // Called after each action finishes to see if the entire star system is mapped
