@@ -24,6 +24,56 @@ window.addEventListener("DOMContentLoaded", () => {
   // Section containing all scanning/action buttons, hidden until travel completes
   const actionsSection = document.getElementById("actionsSection");
 
+const lifeSupportBarFill = document.getElementById("lifeSupportBarFill");
+const lifeSupportTimeDisplay = document.getElementById("lifeSupportTime");
+const lifeSupportContainer = document.getElementById("lifeSupportContainer");
+
+// Life Support timer (5 minutes = 300 seconds)
+const LIFE_SUPPORT_DURATION = 300; 
+let lifeSupportRemaining = LIFE_SUPPORT_DURATION;
+
+function formatTime(seconds) {
+  const mins = Math.floor(seconds / 60).toString().padStart(2, '0');
+  const secs = (seconds % 60).toString().padStart(2, '0');
+  return `${mins}:${secs}`;
+}
+
+function updateLifeSupportBar() {
+  // Calculate percent width for bar
+  const percent = (lifeSupportRemaining / LIFE_SUPPORT_DURATION) * 100;
+  lifeSupportBarFill.style.width = percent + "%";
+  
+  // Update time display
+  lifeSupportTimeDisplay.textContent = formatTime(lifeSupportRemaining);
+  
+  if (lifeSupportRemaining <= 0) {
+    lockExploration();
+    clearInterval(lifeSupportInterval);
+    lifeSupportTimeDisplay.textContent = "00:00 - LIFE SUPPORT FAILED";
+  }
+}
+
+// Lock all exploration buttons and travel button
+function lockExploration() {
+  // Disable travel button
+  travelButton.disabled = true;
+  
+  // Disable all action buttons
+  actions.forEach(({id}) => {
+    const btn = document.getElementById(id);
+    if (btn) btn.disabled = true;
+  });
+}
+
+// Start countdown timer
+const lifeSupportInterval = setInterval(() => {
+  lifeSupportRemaining--;
+  updateLifeSupportBar();
+}, 1000);
+
+// Initialize bar at start
+updateLifeSupportBar();
+  
   // ==== ACTIONS SETUP ====
   // Define each action button, its progress bar, and how long it takes (ms)
   const actions = [
