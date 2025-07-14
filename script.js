@@ -130,7 +130,11 @@ function lockExploration() {
         researchDisplay.textContent = `Research: ${researchCount}`;
         checkAllActionsCompleted();
       }
-      const upgradeBtn = document.getElementById("upgradeFasterScan");
+    }, interval);
+  });
+});
+
+    const upgradeBtn = document.getElementById("upgradeFasterScan");
         upgradeBtn.addEventListener("click", () => {
         if (researchCount >= 6 && !hasFasterScannerUpgrade) {
         researchCount -= 6;
@@ -140,11 +144,6 @@ function lockExploration() {
         upgradeBtn.textContent = "Faster Scanners (Purchased)";
   }
 });
-
-    }, interval);
-  });
-});
-
 
   // ==== CHECK IF ALL ACTIONS COMPLETED ====
   // Called after each action finishes to see if the entire star system is mapped
