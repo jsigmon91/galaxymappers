@@ -130,6 +130,17 @@ function lockExploration() {
         researchDisplay.textContent = `Research: ${researchCount}`;
         checkAllActionsCompleted();
       }
+      const upgradeBtn = document.getElementById("upgradeFasterScan");
+        upgradeBtn.addEventListener("click", () => {
+        if (researchCount >= 6 && !hasFasterScannerUpgrade) {
+        researchCount -= 6;
+        researchDisplay.textContent = `Research: ${researchCount}`;
+        hasFasterScannerUpgrade = true;
+        upgradeBtn.disabled = true;
+        upgradeBtn.textContent = "Faster Scanners (Purchased)";
+  }
+});
+
     }, interval);
   });
 });
